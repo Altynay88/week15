@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 100px;
+        }
+        .myButton {
+            box-shadow: 0px 10px 14px -7px #276873;
+            background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+            background-color: #599bb3;
+            border-radius: 8px;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 20px;
+            font-weight: bold;
+            width: 60px;
+            height: 60px;
+            padding: 24px 4px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #3d768a;
+        }
+
+        .myButton:hover {
+            background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+            background-color: #408c99;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <p> Number 1 <input type="text" id="numberone"> </p>
+    <p> Number 2 <input type="text" id="numbertwo"> </p>
+
+    <button class="myButton" onclick="plus ()"> + </button>
+    <button class="myButton" onclick="minus ()"> - </button>
+    <button class="myButton" onclick="multiply ()"> * </button>
+    <button class="myButton" onclick="divide ()"> / </button>
+
+    <p>Result: <input type="text" id="result"></p>
+    <script>
+        function plus() {
+            let num1, num2, result;
+            num1 = parseFloat(document.getElementById('numberone').value);
+            num2 = parseFloat(document.getElementById('numbertwo').value);
+            result = num1 + num2;
+            document.getElementById('result').value = result;
+        }
+
+        function minus() {
+            let num1, num2, result;
+            num1 = parseFloat(document.getElementById('numberone').value);
+            num2 = parseFloat(document.getElementById('numbertwo').value);
+            result = num1 - num2;
+            document.getElementById('result').value = result;
+        }
+
+        function multiply() {
+            let num1, num2, result;
+            num1 = parseFloat(document.getElementById('numberone').value);
+            num2 = parseFloat(document.getElementById('numbertwo').value);
+            result = num1 * num2;
+            document.getElementById('result').value = result;
+        }
+
+        function divide() {
+            let num1, num2, result;
+            num1 = parseFloat(document.getElementById('numberone').value);
+            num2 = parseFloat(document.getElementById('numbertwo').value);
+            if (num2 == 0) {
+                let zero = "На ноль делить нельзя!";
+                document.getElementById('result').value = zero;
+            } else { result = num1 / num2;
+            document.getElementById('result').value = result;
+        }
+        }
+
+    </script>
+</body>
+
+</html>
